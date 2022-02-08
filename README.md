@@ -1,9 +1,20 @@
-# DeepFilter
-This repository contains the codes for DeepFilter a deep learning based Base line wander removal tool.
+# DeepFilter experiments and dataset split as in Arxiv
+
+Our DeepFilter work is published in the **Journal Biomedical Signal and Control** 
+[https://www.sciencedirect.com/science/article/abs/pii/S1746809421005899](https://www.sciencedirect.com/science/article/abs/pii/S1746809421005899 "paper") 
+
+The main repo [https://github.com/fperdigon/DeepFilter](https://github.com/fperdigon/DeepFilter "repo") follows the last 
+version of the paper where some changes on the experiment scheme were requested by the reviewers.
+
+Since for us reproducibility is **KEY** on research, and we understand that some folks will find and read only the 
+Arxiv version, we have decided to create the current repository that follows the experiment scheme described in 
+the preprint Arxiv paper [https://arxiv.org/pdf/2101.03423.pdf](https://arxiv.org/pdf/2101.03423.pdf "paper") 
+
+This repository contains the codes for DeepFilter a deep learning based Baseline wander removal tool.
 
 This repository also contains other classical and deeplearning filters solutions implemented for comparison purposes.
 
-The models deep learning models were implemented using Keras/Tensorflow framework.
+The deep learning models were implemented using Keras/Tensorflow framework.
 
 - [Introduction](#introduction)
 - [Results](#results)
@@ -22,7 +33,7 @@ their diagnostic potential. The baseline wander is one of the most undesirable n
  
 In this work, we propose a novel algorithm for BLW noise filtering using deep learning techniques. The model performance 
 was validated using the QT Database and the MIT-BIH Noise Stress Test Database from Physionet. We implement an Inception 
-inspired multibranch model that by laveraging the use og multi path modules and dilated convolutions is capable of 
+inspired multibranch model that by leveraging the use og multi path modules and dilated convolutions is capable of 
 filtering BLW while preserving ECG signal morphology and been computational efficient.  
 
 The following figure shows the multipath module using dilated convolutions. 
@@ -47,12 +58,18 @@ The following table present the quantitative results of DeepFilter Net compared 
 methods.
 ![Results table](ReadmeImg/results_table.png "Results table")
 
-The figure shows a portion of sele0106 ECG signal. (Second) Original ECG + BLW noise from the NSTDB. (Third) The blue 
-line is the ECG filtered using our approach. (Fourth) The brown signal is the ECG recovered using the IIR filter, this 
-image was included for visual comparison purposes. Metric values are also included.
+Qualitative results
+
+The figure shows a portion of sele0106 ECG signal.
 ![Original ECG signal](ReadmeImg/fig_sele0106_orig.png "Original ECG signal")
+
+Original ECG + BLW noise from the NSTDB.
 ![Original ECG signal + BLW noise](ReadmeImg/fig_sele0106_orig+blw.png "Original ECG signal + BLW noise")
+
+The blue line is the ECG filtered using our approach.Metric values are also included.
 ![ECG filtered using DeepFilter](ReadmeImg/fig_sele0106_dl_filter.png "ECG filtered using DeepFilter")
+
+The brown signal is the ECG recovered using the IIR filter, this image was included for visual comparison purposes. Metric values are also included.
 ![ECG filtered using IIR classical filter](ReadmeImg/fig_sele0106_iir_filter.png "ECG filtered using IIR classical filter")
 
 
@@ -65,6 +82,10 @@ For the present work two methods for reproducibility:
 The simplest way to reproduce the published results is by using the Google Colab notebook. The notebook file displays 
 all cells results from a previous run. If you want to run the codes by yourself just go to the Google Colab Menu 
 "Runtime" then click on "Run all" please be aware that this will take approximately 5 hours.
+
+**IMPORTANT: Due to constant changes in the Google Colab default libraries and runtime, the following link may not
+work as expected. As the date 2022-02-10 the link is working, but we are not giving more support for it in the future.
+To reproduce our work we strongly recommend downloading this git repository and run local, more info in the next section.** 
 
 [Deep Filter Google Colab](https://colab.research.google.com/drive/1S1HjkQnrA0EbEDJFr0D-6DAt62RCcP5_?usp=sharing)
 
@@ -128,21 +149,17 @@ training will be done in CPU (slower).
 ## Citing DeepFilter
 
 When citing DeepFilter please use this BibTeX entry:
-    
-TODO: Inset the correct BibTeX once the Arxiv or paper is published  
-   
-    @proceeding{doi:10.1117/12.2253901,
-    author = {Vázquez Romaguera, Liset and Romero, Francisco Perdigón and Costa, Marly Guimarães Fernandes and Costa Filho, Cicero Ferreira Fernandes},
-    title = {Left ventricle segmentation in cardiac MRI images using fully convolutional neural networks},
-    journal = {Proc. SPIE},
-    volume = {10134},
-    number = {},
-    pages = {101342Z-101342Z-11},
-    year = {2017},
-    doi = {10.1117/12.2253901},
-    URL = { http://dx.doi.org/10.1117/12.2253901},
-    eprint = {}
+
+    @article{romero2021deepfilter,
+    title={DeepFilter: an ECG baseline wander removal filter using deep learning techniques},
+    author={Romero, Francisco P and Pi{\~n}ol, David C and V{\'a}zquez-Seisdedos, Carlos R},
+    journal={Biomedical Signal Processing and Control},
+    volume={70},
+    pages={102992},
+    year={2021},
+    publisher={Elsevier}
     }
+    
     
 ## License
 
