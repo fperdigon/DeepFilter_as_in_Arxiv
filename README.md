@@ -78,6 +78,8 @@ The brown signal is the ECG recovered using the IIR filter, this image was inclu
 For the present work two methods for reproducibility:
 
 ### Run DeepFilter on Google Colab
+### It is NOT possible to run Deep Filter on Google Colab :(
+### Due to Changes made by Google on Colab platform, it is not possible to recreate anymore the needed environment with the current code
 
 The simplest way to reproduce the published results is by using the Google Colab notebook. The notebook file displays 
 all cells results from a previous run. If you want to run the codes by yourself just go to the Google Colab Menu 
